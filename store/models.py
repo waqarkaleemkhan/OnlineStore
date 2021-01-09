@@ -12,4 +12,12 @@ class Products(models.Model):
 	description=models.CharField(max_length=200,null=True, blank=True)
 	image=models.ImageField(upload_to = 'uploads/products/')
 
+class Customer(models.Model):
+	first_name=models.CharField(max_length=50)
+	last_name=models.CharField(max_length=50)
+	email=models.EmailField()
+	phone=models.CharField(max_length=15)
+	address=models.CharField(max_length=200)
+	password=models.CharField(max_length=500)
+
 
