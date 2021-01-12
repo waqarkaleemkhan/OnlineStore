@@ -1,4 +1,3 @@
-
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from store.models import Products,Category,Customer
@@ -18,6 +17,8 @@ class LoginUser(View):
 		if customer: #if customer with email object exist the check customer password
 			flag=check_password(password,customer.password) #checking customer password with hash password and if return true customer redirect to home page
 			if flag:
+				request.session['customer']=customer.id
+				# request.session['email']=customer.email we don't need email here because we can do things on customer id which is unique
 				return redirect('home')
 			else:
 				error_message='Email or Password is Invalid'
@@ -30,3 +31,8 @@ class LoginUser(View):
 			return Customer.objects.get(email=email)
 		except:
 			return False
+
+
+def logout_user(request):
+	request.session.clear()
+	return redirect('login')
