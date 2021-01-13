@@ -36,3 +36,7 @@ class LoginUser(View):
 def logout_user(request):
 	request.session.clear()
 	return redirect('login')
+
+
+def cart_page(request):
+	return render(request,'store/cart.html')

@@ -5,6 +5,7 @@
 
 {%block content%}
 {%load cart%}
+{%load customefilters%}
 	<div class="row mx-auto">
 		<div class="col-lg-2 mx-auto">
 			<div class="list-group mt-3">
@@ -25,7 +26,7 @@
 							<img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">{{product.name}}</h5>
-								<p class="card-text">{{product.price}}</p>
+								<p class="card-text">{{product.price|currency}}</p>
 								<!-- {{product | is_in_cart:request.session.cart}} -->
 								
 							</div>
