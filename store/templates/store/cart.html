@@ -40,8 +40,43 @@
             </table>
             <hr>
             <div class="m-3 p-3">
-                <a href="#" class="btn btn-success btn-outline-info border rounded col-lg-3 float-right" style="color: whitesmoke;">Check out</a>
+                <a href="#"data-toggle="modal" data-target="#exampleModal" class="btn btn-success btn-outline-info border rounded col-lg-3 float-right" style="color: whitesmoke;">Check out</a>
             </div>
         </div>
     </div>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Check Out</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="m-2 p-3">
+            <form action="{%url 'check_out'%}" method="POST">
+                {%csrf_token%}
+                <div class="form-group">
+                  <label for="">Address</label>
+                  <input type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  
+                </div>
+                <div class="form-group">
+                    <label for="">Phone</label>
+                    <input type="number" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    
+                </div>
+                <input type ="submit" value="Check Out" class="btn btn-success btn-outline-info border rounded col-lg-6 float-right"style="color: whitesmoke;"/>
+            </form>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
 {%endblock%}
