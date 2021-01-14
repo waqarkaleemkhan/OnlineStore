@@ -13,7 +13,7 @@ class Home(View):
 			quantity = cart.get(product)
 			if quantity:
 				if remove:
-					if quantity==1:
+					if quantity<=1:
 						cart.pop(product)
 					else:
 						cart[product]=quantity-1
@@ -29,7 +29,8 @@ class Home(View):
 		return redirect('home')
 
 
-
+	
+		
 	def get(self,request):
 		cart=request.session.get('cart') # this is empty session object for not throwing the error while reomove cookies from browser
 		if not cart: # if the session and cookies are empty then create an empty sesion object

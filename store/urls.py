@@ -1,4 +1,5 @@
 from django.urls import path
+from store.middlewares.authmiddleware import auth_middleware
 
 from . import views
 from .views import home,login,signup
@@ -13,5 +14,5 @@ urlpatterns=[
 	path('logout',logout_user,name='logout'),
 	path('cart_page',Cart.as_view(),name='cart_page'),
 	path('check_out',Checkout.as_view(),name="check_out"),
-	path('orders_page',Orders.as_view(),name="order_page"),
+	path('orders_page',auth_middleware(Orders.as_view()),name="order_page"), #here we can use the middleware also
 ]

@@ -6,6 +6,9 @@ from django.views import View
 
 class registerUser(View):
 	def get(self,request):
+		cart=request.session.get('cart') # this is empty session object for not throwing the error while reomove cookies from browser
+		if not cart: # if the session and cookies are empty then create an empty sesion object
+			request.session['cart']={}
 		return render(request,'store/register.html')
 	def post(self,request):
 		first_name=request.POST.get('first_name')
