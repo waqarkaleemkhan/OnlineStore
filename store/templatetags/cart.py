@@ -30,3 +30,8 @@ def cart_total_price(products, cart): # we pass cart because we are using the ab
     for p in products:
         sum+=product_total_price(p,cart) # p will give us single product from loop iterations and the cart is because of using cart function
     return sum
+
+
+@register.filter(name='multipy_price_and_quantity') # this filter is for multiply the price the and quantity to show the total price of products
+def multipy_price_and_quantity(number,number1): #here two number will come one is price and the other one is the quantity
+    return number*number1

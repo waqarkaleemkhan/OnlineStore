@@ -3,3 +3,4 @@ register = template.Library() # register is a decorater and it will be in templa
 @register.filter(name='currency')
 def currency(number):
     return "PKR "+str(number)
+

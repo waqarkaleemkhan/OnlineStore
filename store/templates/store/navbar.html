@@ -29,21 +29,19 @@
     </ul>
     <ul class="navbar-nav my-2 my-lg-0">
       <li class="nav-item ">
-        <a class="nav-link" href="{%url 'cart_page'%}">Carts <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{%url 'cart_page'%}">Carts <span class="badge badge-info">{{request.session.cart.keys|length}}</span><span class="sr-only">(current)</span></a>
       </li>
       {%if request.session.customer%}
         
         <li class="nav-item ">
-          <a class="nav-link" href="#">Orders <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{%url 'order_page'%}">Orders <span class="sr-only">(current)</span></a>
         </li>
       
         <li class="nav-item ">
           <a class="nav-link" href="{%url 'logout'%}">logout <span class="sr-only">(current)</span></a>
         </li>
       {%else%}
-      <li class="nav-item ">
-        <a class="nav-link" href="{%url 'cart_page'%}">Carts <span class="sr-only">(current)</span></a>
-      </li>
+     
         <li class="nav-item ">
           <a class="nav-link" href="{%url 'login'%}">Login <span class="sr-only">(current)</span></a>
         </li>
