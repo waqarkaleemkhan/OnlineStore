@@ -50,3 +50,8 @@ class Home(View):
 			return Products.objects.filter(category=category_id)
 		else:
 			return Products.objects.all()
+
+
+
+def contact_us(request):
+	return render(request,'store/contactus.html')

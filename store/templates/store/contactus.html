@@ -1,0 +1,64 @@
+{%extends 'store/base.html'%}
+{%load static%}
+{%block content%}
+
+    
+    <div class="col-lg-12">
+        <h4 class="text-center">Contact Us <br><small>Swat Cash and Carry</small></h4><br>
+        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3320.916565658344!2d73.0215643!3d33.6593237!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df95906a03cfff%3A0x2b2f1c1c99b676ce!2sInternational+Islamic+University+Islamabad!5e0!3m2!1sen!2suk!4v1524180722921" width="100%" height="200" frameborder="0" target="_blank" style="border:0" allowfullscreen></iframe> -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.9625402678216!2d72.34255311519182!3d34.80688428040721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dc3df2312a0d1b%3A0x51477b4504f61aa1!2sMy%20swat%20whole%20sale%20cash%20and%20carry!5e0!3m2!1sen!2s!4v1610975719810!5m2!1sen!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen></iframe>
+    </div>
+    	
+
+    <hr>
+
+<!-- Start of Form-->
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-12">
+                <form class="form-horizontal" action="submit.php">
+                    
+                    <div class="form-group row">
+                        <div class="col-md-2"></div>
+                        <label class="col-md-1 control-label"><p style="font-family:bell-mt">Name:</p></label>
+                        <div class="col-md-6">
+                            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                        </div>
+                    </div>
+                
+                    <div class="form-group row">
+                        <div class="col-md-2"></div>
+                        <label class="col-md-1 control-label"><p style="font-family:bell-mt">Email:</p></label>
+                        <div class ="col-md-6">
+                            
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                    </div>
+                
+                    <div class="form-group row">
+                        <div class="col-md-2"></div>
+                        <label class="col-md-1 control-label"><p style="font-family:bell-mt">Phone#</p></label>
+                        <div class="col-md-6">
+                            
+                            <input  type="number" name="phoneno" class="form-control" placeholder="Mobile Number" required>
+                        </div>
+                    </div>
+                
+                
+                    <div class="form-group row">
+                        <div class="col-md-2"></div>
+                        <label class="col-md-1 control-label"><p style="font-family:bell-mt">Message Box:</p></label>
+                        <div class="col-md-6">
+                            <textarea class="form-control" name="message" rows="6" id="comment" placeholder="Type your message" required></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <button type="button" class="btn btn-sm btn-success">Submit</button>
+                        
+                    </div>
+                </form>
+                <hr>
+            </div>
+        </div>
+    </div>
+{%endblock%}
