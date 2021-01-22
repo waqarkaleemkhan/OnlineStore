@@ -2,7 +2,12 @@
 {%load static%}
 {%block content%}
 <link rel="stylesheet" href="{%static 'store/css/register.css'%}">
-<div id=body class="text-center">
+<link rel="stylesheet" href="{%static 'store/css/loginbutton.css'%}">
+<style>
+  
+</style>
+
+<div id="body" class="text-center">
     <form action="/login" method="POST" class="form-signin">
       {%csrf_token%}
         <img class="mb-4" src="static/store/images/logo.jpg" alt="" width="72" height="72">
@@ -20,6 +25,15 @@
           <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
+        </div>
+        <div id="buttonbody">
+          <a id="buttonbody1" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Neon Button
+          </a>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
