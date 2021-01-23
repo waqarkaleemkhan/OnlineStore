@@ -4,7 +4,13 @@
 <link rel="stylesheet" href="{%static 'store/css/register.css'%}">
 <link rel="stylesheet" href="{%static 'store/css/loginbutton.css'%}">
 <style>
-  
+  .field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -30px;
+  position: relative;
+  z-index: 2;
+}
 </style>
 
 <div id="body" class="text-center">
@@ -19,8 +25,12 @@
         {%endif%}
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" name="email"id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div>
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          <span  class="fa fa-fw fa-eye field-icon " onclick="myFunction()"></span>
+        </div>
+        
         <div class="checkbox mb-3">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
@@ -39,4 +49,14 @@
         <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
       </form>
 </div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("inputPassword");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
 {%endblock%}
