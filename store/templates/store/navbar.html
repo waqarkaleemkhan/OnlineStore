@@ -1,58 +1,78 @@
 {%load static%}
 {%block main_content%}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">Swat Cash and Carry</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<style>
+  @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #1C2331!important;
+            }
+        }
+.view,body,html{height:100%}.navbar{background-color:rgba(0,0,0,.2)}.page-footer,.top-nav-collapse{background-color:#1C2331}@media only screen and (max-width:768px){.navbar{background-color:#1C2331}}
+</style>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{%url 'contact_us'%}">Contact Us</a>
-      </li>
-      
-    </ul>
-    <ul class="navbar-nav my-2 my-lg-0">
-      <li class="nav-item ">
-        <a class="nav-link" href="{%url 'cart_page'%}">Carts <span class="badge badge-info">{{request.session.cart.keys|length}}</span><span class="sr-only">(current)</span></a>
-      </li>
-      {%if request.session.customer%}
+    <!-- Brand -->
+    <a class="navbar-brand" href="/" target="_blank">
+      <strong>Swat Cash and Carry</strong>
+    </a>
+
+    <!-- Collapse -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <!-- Left -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" >About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'contact_us'%}" target="_blank">Contact Us</a>
+        </li>
+       
+      </ul>
+
+      <!-- Right -->
+      <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item">
+          <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </li>
+        {%if request.session.customer%}
+        <li class="nav-item ">
+          <a class="nav-link" href="{%url 'cart_page'%}">Carts <span class="badge badge-info">{{request.session.cart.keys|length}}</span><span class="sr-only">(current)</span></a>
+        </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{%url 'order_page'%}">Orders <span class="sr-only">(current)</span></a>
+          </li>
         
-        <li class="nav-item ">
-          <a class="nav-link" href="{%url 'order_page'%}">Orders <span class="sr-only">(current)</span></a>
-        </li>
-      
-        <li class="nav-item ">
-          <a class="nav-link" href="{%url 'logout'%}">logout <span class="sr-only">(current)</span></a>
-        </li>
-      {%else%}
+          <li class="nav-item ">
+            <a class="nav-link" href="{%url 'logout'%}">logout <span class="sr-only">(current)</span></a>
+          </li>
+        {%else%}
      
-        <li class="nav-item ">
-          <a class="nav-link" href="{%url 'login'%}">Login <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="{%url 'register'%}">Sing Up <span class="sr-only">(current)</span></a>
-        </li>
-      {%endif%}
-      
-    </ul>
-    
+          <li class="nav-item ">
+            <a class="nav-link" href="{%url 'login'%}">Login <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{%url 'register'%}">Sing Up <span class="sr-only">(current)</span></a>
+          </li>
+        {%endif%}
+        
+      </ul>
+
+    </div>
+
   </div>
 </nav>
-
 {%endblock main_content%}
